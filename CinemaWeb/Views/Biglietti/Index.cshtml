@@ -1,0 +1,47 @@
+@model CinemaWeb.Models.Biglietto
+
+@{
+    ViewData["Title"] = "Acquista Biglietto";
+}
+
+<h2>Acquista un Biglietto</h2>
+
+<form asp-action="Acquista" method="post">
+    <div>
+        <label>Nome:</label>
+        <input type="text" asp-for="Nome" required />
+    </div>
+
+    <div>
+        <label>Cognome:</label>
+        <input type="text" asp-for="Cognome" required />
+    </div>
+
+    <div>
+        <label>Seleziona Sala:</label>
+        <select asp-for="Sala">
+            <option value="SALA NORD">SALA NORD</option>
+            <option value="SALA EST">SALA EST</option>
+            <option value="SALA SUD">SALA SUD</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Tipo Biglietto:</label>
+        <select asp-for="Tipo">
+            <option value="Intero">Intero</option>
+            <option value="Ridotto">Ridotto</option>
+        </select>
+    </div>
+
+    <button type="submit">Acquista</button>
+</form>
+
+<hr />
+
+<h3>Statistiche Biglietti Venduti</h3>
+<ul>
+    <li>SALA NORD: @ViewBag.BigliettiVenduti["SALA NORD"] (Ridotti: @ViewBag.RidottiVenduti["SALA NORD"])</li>
+    <li>SALA EST: @ViewBag.BigliettiVenduti["SALA EST"] (Ridotti: @ViewBag.RidottiVenduti["SALA EST"])</li>
+    <li>SALA SUD: @ViewBag.BigliettiVenduti["SALA SUD"] (Ridotti: @ViewBag.RidottiVenduti["SALA SUD"])</li>
+</ul>

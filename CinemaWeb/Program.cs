@@ -20,9 +20,9 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Biglietti}/{action=Index}/{id?}");
+//app.MapControllerRoute(
+//    name: "default",
+//    pattern: "{controller=Biglietti}/{action=Index}/{id?}");
 
 
 app.MapControllerRoute(
